@@ -132,6 +132,11 @@ class Featurino:
 
     def _save_to_disk(self, df: pd.DataFrame):
         assert Featurino._check_df(df=df), "The provided dataframe is empty or None, build your features first."
+
+        features_dir = os.path.dirname(os.path.normpath(self._cache_path))
+        if not os.path.exists(features_dir):
+            os.makedirs(features_dir)
+
         self._df_cache.save(df=df, path=self._cache_path)
 
     @property
