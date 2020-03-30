@@ -1,7 +1,6 @@
+import pandas as pd
 from abc import ABC, abstractmethod
 from typing import Optional
-
-import pandas as pd
 
 
 class DfCache(ABC):
